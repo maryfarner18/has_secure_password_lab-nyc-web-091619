@@ -1,0 +1,21 @@
+<h1>Create User</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |msg| %>
+        <h4><%= msg %></h4>
+    <%end%>
+<%end%>
+
+<%= form_for @user do |f|%>
+    <%= f.label "Username"%>
+    <%= f.text_field :name%>
+    <br>
+
+    <%= f.label "Password"%>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label "Confirm Password"%>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Create User"%>
+<%end%>
